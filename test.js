@@ -36,12 +36,47 @@ const Header = () => {
         </nav>
       </div>
     </header>
-  );
-};
-
+  )
+}
+const Home = () => {
+    const bodyStyle = {
+      backgroundImage: `url(${backgroundImage})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+    };
+  
+    return (
+      <div style={bodyStyle}>
+        <Header />
+        <main id='content' role='main'>
+          {/* Content */}
+          <div className='d-sm-flex'>
+            <div className='container d-sm-flex align-items-sm-center vh-sm-100 content-space-t-3 content-space-b-1 content-space-b-sm-3 content-space-sm-0'>
+              <div className='row justify-content-sm-between align-items-sm-center flex-grow-1'>
+                <div className='col-9 col-sm-5 mb-5 mb-sm-0'>
+                  <Image
+                    className='img-fluid'
+                    src='/assets/svg/illustrations/oc-yelling.svg'
+                    width={500}
+                    height={500}
+                    alt='SVG Illustration'
+                  />
+                </div>
+                {/* End Col */}
+                <CountDown />
+                {/* End Col */}
+              </div>
+              {/* End Row */}
+            </div>
+          </div>
+          {/* End Content */}
+        </main>
+        </div>
+    )
+}
 const Footer = () => {
   // get current year
-  const year = new Date().getFullYear();
+  const year = new Date().getFullYear()
 
   return (
     <footer className='position-sm-absolute start-0 end-0 bottom-0'>
@@ -69,8 +104,8 @@ const Footer = () => {
         </div>
       </div>
     </footer>
-  );
-};
+  )
+}
 
 const CountDown = () => {
   const calculateTimeLeft = () => {
@@ -82,7 +117,7 @@ const CountDown = () => {
         days: Math.floor(difference / (1000 * 60 * 60 * 24)),
         hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
         minutes: Math.floor((difference / 1000 / 60) % 60),
-        seconds: Math.floor((difference / 1000) % 60),
+        seconds: Math.floor((difference / 1000) % 60)
       };
     }
 
@@ -125,93 +160,5 @@ const CountDown = () => {
   );
 };
 
-const Home = () => {
-  const [bgIndex, setBgIndex] = useState(0);
-  const backgrounds = [
-    '/bg1.jpg',
-    '/bg2.jpg',
-    '/bg3.jpg',
-    // Add more images as needed
-  ];
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setBgIndex((prevIndex) => (prevIndex + 1) % backgrounds.length);
-    }, 3000);
-
-    return () => clearInterval(interval);
-  }, [backgrounds.length]);
-
-  return (
-    <>
-      <div
-        style={{
-          backgroundImage: `url(${backgrounds[bgIndex]})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          height: '100vh',
-          width: '100%',
-          position: 'fixed',
-          top: 0,
-          left: 0,
-          zIndex: -1,
-          opacity: 0.3, 
-        }}
-      />
-      <Header />
-      <main id='content' role='main'>
-        {/* Content */}
-        <div className='d-sm-flex'>
-          <div className='container d-sm-flex align-items-sm-center vh-sm-100 content-space-t-3 content-space-b-1 content-space-b-sm-3 content-space-sm-0'>
-            <div className='row justify-content-sm-between align-items-sm-center flex-grow-1'>
-              <div className='col-9 col-sm-5 mb-5 mb-sm-0'>
-                <Image
-                  className='img-fluid'
-                  src='/assets/svg/illustrations/oc-yelling.svg'
-                  width={250}
-                  height={500}
-                  alt='SVG Illustration'
-                  style={{
-                    filter: 'drop-shadow(0 0 5px white)', // Adding a white outline
-                  }}
-                />
-              </div>
-              {/* End Col */}
-              <CountDown />
-              {/* End Col */}
-            </div>
-            {/* End Row */}
-          </div>
-          
-        </div>
-       
-        <div className='frequency-pattern'>
-          <div className='frequency-section'>
-            <h2>Our frequencies</h2>
-            <div className='frequency-cards'>
-              <div className='frequency-card'>
-                <h3>Malindi</h3>
-                <p>90.5 FM</p>
-              </div>
-              <div className='frequency-card'>
-                <h3>Kilifi</h3>
-                <p>94.7 FM</p>
-              </div>
-              <div className='frequency-card'>
-                <h3>Mombasa3</h3>
-                <p>98.3 FM</p>
-              </div>
-            </div>
-          </div> 
-          </div>
-          <div className='animate'>
-            <p>Swahilipotfm  Sauti ya pwani</p>
-          </div>
-        {/* End Content */}
-      </main>
-      <Footer />
-    </>
-  );
-};
 
 export default Home;

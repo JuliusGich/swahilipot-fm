@@ -1,0 +1,66 @@
+.frequency-pattern {
+  display: flex;
+  justify-content: center; /* Align horizontally in the center */
+  align-items: center; /* Align vertically in the center */
+  position: absolute;
+  left: 35%;
+  top:15%;/* Make it take up the full height of the viewport */
+}
+
+.frequency-section {
+  text-align: center; /* Center the content inside the section */
+}
+
+.frequency-cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Align cards vertically in the center */
+}
+
+.frequency-card {
+  margin-bottom: 20px; /* Add some spacing between cards */
+  width: 200px; /* Set the width of the cards */
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.frequency-card h3 {
+  margin-top: 0;
+  font-size: 18px; /* Adjust heading font size */
+}
+
+.frequency-card p {
+  margin: 0;
+  font-size: 14px; /* Adjust paragraph font size */
+}
+.animate {
+  position:fixed;
+  bottom: 20px; /* Adjust the distance from the bottom as needed */
+  left: -100%; /* Initially position it outside the left boundary */
+  animation: slideRight 25s infinite; /* Adjust duration and timing as needed */
+  z-index: 999;
+  top:80% /* Ensure it stays above the footer */
+}
+.animate p{
+font-size: 18px;
+color: #fff; /* Adjust the text color as needed */
+background-color: #007bff; /* Adjust the background color as needed */
+padding: 10px 20px; /* Adjust the padding as needed */
+border-radius: 5px;
+}
+
+.footer-translate {
+  position: relative;
+  z-index: 1; /* Ensure the footer stays below the animated element */
+}
+
+@keyframes slideRight {
+  0% {
+    left: -100%; /* Move it outside the left boundary */
+  }
+  100% {
+    left: 100%; /* Move it outside the right boundary */
+  }
+}
