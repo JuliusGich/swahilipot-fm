@@ -1,66 +1,59 @@
-.frequency-pattern {
-  display: flex;
-  justify-content: center; /* Align horizontally in the center */
-  align-items: center; /* Align vertically in the center */
+.contain {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  top: 8%;
   position: absolute;
-  left: 35%;
-  top:15%;/* Make it take up the full height of the viewport */
 }
 
-.frequency-section {
-  text-align: center; /* Center the content inside the section */
+.title {
+  text-align: center;
+  color: #333;
 }
 
-.frequency-cards {
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Align cards vertically in the center */
+.title span {
+  color: #FF5733; /* Adjust color as needed */
 }
 
-.frequency-card {
-  margin-bottom: 20px; /* Add some spacing between cards */
-  width: 200px; /* Set the width of the cards */
+.description {
+  text-align: center;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 20px;
+}
+
+.card {
   background-color: #fff;
+  padding: 10px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  padding: 20px;
+  text-decoration: none;
+  color: #333;
+  transition: all 0.3s ease;
+}
+.card img {
+  height: 200px; /* Set the height as needed */
+  width: auto; /* Maintain aspect ratio */
+  margin-bottom: 10px;
 }
 
-.frequency-card h3 {
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
   margin-top: 0;
-  font-size: 18px; /* Adjust heading font size */
+  color: #333;
 }
 
-.frequency-card p {
-  margin: 0;
-  font-size: 14px; /* Adjust paragraph font size */
-}
-.animate {
-  position:fixed;
-  bottom: 20px; /* Adjust the distance from the bottom as needed */
-  left: -100%; /* Initially position it outside the left boundary */
-  animation: slideRight 25s infinite; /* Adjust duration and timing as needed */
-  z-index: 999;
-  top:80% /* Ensure it stays above the footer */
-}
-.animate p{
-font-size: 18px;
-color: #fff; /* Adjust the text color as needed */
-background-color: #007bff; /* Adjust the background color as needed */
-padding: 10px 20px; /* Adjust the padding as needed */
-border-radius: 5px;
+.card p {
+  margin-bottom: 0;
+  color: #666;
 }
 
-.footer-translate {
-  position: relative;
-  z-index: 1; /* Ensure the footer stays below the animated element */
-}
-
-@keyframes slideRight {
-  0% {
-    left: -100%; /* Move it outside the left boundary */
-  }
-  100% {
-    left: 100%; /* Move it outside the right boundary */
-  }
-}

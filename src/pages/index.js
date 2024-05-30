@@ -116,7 +116,6 @@ const CountDown = () => {
   return (
     <div className='col-3 col-sm-5'>
       <div className='text-center text-sm-start'>
-        <h3 className='h2 text-primary'>Swahilipot FM</h3>
         {/* <div>
           {timerComponents.length ? timerComponents : <span>Time's up!</span>}
         </div> */}
@@ -164,18 +163,7 @@ const Home = () => {
         <div className='d-sm-flex'>
           <div className='container d-sm-flex align-items-sm-center vh-sm-100 content-space-t-3 content-space-b-1 content-space-b-sm-3 content-space-sm-0'>
             <div className='row justify-content-sm-between align-items-sm-center flex-grow-1'>
-              <div className='col-9 col-sm-5 mb-5 mb-sm-0'>
-                <Image
-                  className='img-fluid'
-                  src='/assets/svg/illustrations/oc-yelling.svg'
-                  width={250}
-                  height={500}
-                  alt='SVG Illustration'
-                  style={{
-                    filter: 'drop-shadow(0 0 5px white)', // Adding a white outline
-                  }}
-                />
-              </div>
+
               {/* End Col */}
               <CountDown />
               {/* End Col */}
@@ -184,26 +172,24 @@ const Home = () => {
           </div>
           
         </div>
+        <div className='contain'>
+        <h1 class="title">Welcome to <span>Swahilipot FM</span></h1>
+      <p class="description">Your upcoming FM radio station bringing you the latest news, music, and entertainment.</p>
+      <div class="grid">
+        <a href="#" class="card">
+          <h3>About Us</h3>
+          <img src='img1.jpg'></img>
+          <p>Learn more about Swahilipot FM and our mission.</p>
+        </a>
+        <a href="#" class="card">
+          <h3>Programs</h3>
+          <img src='img2.jpg'></img>
+          <p>Discover our lineup of programs and shows.</p>
+        </a>
+      </div>
+      </div>
        
-        <div className='frequency-pattern'>
-          <div className='frequency-section'>
-            <h2>Our frequencies</h2>
-            <div className='frequency-cards'>
-              <div className='frequency-card'>
-                <h3>Malindi</h3>
-                <p>90.5 FM</p>
-              </div>
-              <div className='frequency-card'>
-                <h3>Kilifi</h3>
-                <p>94.7 FM</p>
-              </div>
-              <div className='frequency-card'>
-                <h3>Mombasa3</h3>
-                <p>98.3 FM</p>
-              </div>
-            </div>
-          </div> 
-          </div>
+    
           <div className='animate'>
             <p>Swahilipotfm  Sauti ya pwani</p>
           </div>
